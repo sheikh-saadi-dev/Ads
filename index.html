@@ -4,13 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Game Download Pro - Fast & Safe Game Downloads</title>
-    <meta name="description" content="Download the latest PC games, mods, and tools for USA gamers. 100% safe and virus-free downloads.">
     
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <!-- Popunder -->
+    <script src="https://pl30458941.effectivecpmnetwork.com/b8/8f/9a/b88f9a464a1f5baaade46226e3d4b548.js"></script>
     
-    <!-- Animate.css for animations -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <!-- Social Bar -->
+    <script src="https://pl30458944.effectivecpmnetwork.com/f4/85/36/f48536220ba0dd296207338d87288c0c.js"></script>
     
     <style>
         * {
@@ -18,970 +17,699 @@
             padding: 0;
             box-sizing: border-box;
         }
-        
-        :root {
-            --primary: #00f3ff;
-            --secondary: #00aaff;
-            --dark: #0a0a15;
-            --darker: #05050c;
-            --accent: #ff00ff;
-            --text: #e0e0ff;
-            --card-bg: rgba(20, 20, 40, 0.7);
-        }
-        
+
         body {
-            font-family: 'Roboto', sans-serif;
-            background: linear-gradient(135deg, var(--darker) 0%, var(--dark) 100%);
-            color: var(--text);
-            min-height: 100vh;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #0a0a0a;
+            color: #fff;
             overflow-x: hidden;
-            background-attachment: fixed;
+            position: relative;
         }
-        
-        /* Glowing animation */
-        @keyframes pulse {
-            0% { box-shadow: 0 0 0 0 rgba(0, 243, 255, 0.7); }
-            70% { box-shadow: 0 0 0 15px rgba(0, 243, 255, 0); }
-            100% { box-shadow: 0 0 0 0 rgba(0, 243, 255, 0); }
-        }
-        
-        @keyframes float {
-            0% { transform: translateY(0px); }
-            50% { transform: translateY(-15px); }
-            100% { transform: translateY(0px); }
-        }
-        
-        @keyframes slideIn {
-            from { transform: translateX(-100%); opacity: 0; }
-            to { transform: translateX(0); opacity: 1; }
-        }
-        
-        /* Header Styles */
-        header {
-            background: rgba(10, 10, 21, 0.8);
-            backdrop-filter: blur(10px);
-            padding: 15px 5%;
+
+        /* Animated Background */
+        .bg-animation {
             position: fixed;
             width: 100%;
-            z-index: 1000;
-            border-bottom: 1px solid rgba(0, 243, 255, 0.2);
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            background: linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%);
+            overflow: hidden;
         }
-        
-        .header-container {
+
+        .particles {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                radial-gradient(2px 2px at 20px 30px, #00d4ff, transparent),
+                radial-gradient(2px 2px at 40px 70px, #ff00ff, transparent),
+                radial-gradient(2px 2px at 50px 160px, #00d4ff, transparent),
+                radial-gradient(2px 2px at 90px 40px, #ff00ff, transparent),
+                radial-gradient(2px 2px at 130px 80px, #00d4ff, transparent);
+            background-repeat: repeat;
+            background-size: 200px 200px;
+            animation: particles 10s linear infinite;
+            opacity: 0.3;
+        }
+
+        @keyframes particles {
+            0% { transform: translateY(0) rotate(0deg); }
+            100% { transform: translateY(-200px) rotate(360deg); }
+        }
+
+        .glow-lines {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(0, 212, 255, 0.1), transparent);
+            animation: glow 8s ease-in-out infinite;
+        }
+
+        @keyframes glow {
+            0%, 100% { transform: translateX(-100%); }
+            50% { transform: translateX(100%); }
+        }
+
+        /* Header */
+        .header {
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(10px);
+            padding: 20px 0;
+            border-bottom: 2px solid #00d4ff;
+            box-shadow: 0 0 30px rgba(0, 212, 255, 0.3);
+            position: relative;
+            z-index: 100;
+        }
+
+        .header-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            max-width: 1400px;
-            margin: 0 auto;
         }
-        
+
         .logo {
+            font-size: 2.5em;
+            font-weight: bold;
+            background: linear-gradient(45deg, #00d4ff, #ff00ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 0 30px rgba(0, 212, 255, 0.5);
+            animation: logoPulse 2s ease-in-out infinite;
+        }
+
+        @keyframes logoPulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.8; }
+        }
+
+        .usa-badge {
             display: flex;
             align-items: center;
-            gap: 15px;
+            gap: 10px;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 10px 20px;
+            border-radius: 25px;
+            border: 1px solid #00d4ff;
         }
-        
-        .logo-icon {
-            font-size: 2.2rem;
-            color: var(--primary);
-            text-shadow: 0 0 15px rgba(0, 243, 255, 0.7);
-            animation: float 6s ease-in-out infinite;
+
+        .usa-flag {
+            font-size: 1.5em;
         }
-        
-        .logo h1 {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 2.5rem;
-            background: linear-gradient(90deg, var(--primary), var(--accent));
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            text-shadow: 0 0 10px rgba(0, 243, 255, 0.3);
-        }
-        
+
         .header-nav {
             display: flex;
-            gap: 30px;
+            gap: 20px;
+            align-items: center;
         }
-        
-        .header-nav a {
-            color: var(--text);
+
+        .social-icons {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-icons a {
+            color: #00d4ff;
+            font-size: 1.5em;
+            transition: all 0.3s;
             text-decoration: none;
-            font-weight: 500;
-            position: relative;
-            padding: 5px 0;
-            transition: all 0.3s ease;
         }
-        
-        .header-nav a:hover {
-            color: var(--primary);
+
+        .social-icons a:hover {
+            color: #ff00ff;
+            transform: translateY(-3px);
         }
-        
-        .header-nav a::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: linear-gradient(90deg, var(--primary), var(--accent));
-            transition: width 0.3s ease;
+
+        /* Top Banner Container */
+        .top-banner-container {
+            max-width: 1400px;
+            margin: 30px auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: center;
         }
-        
-        .header-nav a:hover::after {
-            width: 100%;
-        }
-        
-        /* Hero Section */
-        .hero {
-            padding: 180px 5% 100px;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: radial-gradient(circle, transparent 20%, rgba(0, 0, 0, 0.3) 80%);
-            pointer-events: none;
-        }
-        
-        .hero-content {
-            max-width: 800px;
+
+        /* Main Container */
+        .main-container {
+            max-width: 1400px;
             margin: 0 auto;
+            padding: 20px;
+            display: flex;
+            gap: 20px;
             position: relative;
-            z-index: 2;
+            z-index: 10;
         }
-        
-        .hero h2 {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 4.5rem;
-            line-height: 1.1;
-            margin-bottom: 20px;
-            background: linear-gradient(90deg, var(--primary), var(--accent));
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            text-shadow: 0 0 20px rgba(0, 243, 255, 0.3);
-            animation: pulse 2s infinite;
+
+        /* Sidebar Left */
+        .sidebar-left {
+            width: 180px;
+            position: sticky;
+            top: 100px;
+            height: fit-content;
         }
-        
-        .hero p {
-            font-size: 1.5rem;
-            color: #a0a0ff;
+
+        /* Content Area */
+        .content {
+            flex: 1;
+        }
+
+        /* Sidebar Right */
+        .sidebar-right {
+            width: 320px;
+            position: sticky;
+            top: 100px;
+            height: fit-content;
+        }
+
+        /* Game Cards Section */
+        .games-section {
+            margin: 40px 0;
+        }
+
+        .section-title {
+            font-size: 2em;
+            text-align: center;
             margin-bottom: 40px;
-            line-height: 1.6;
+            background: linear-gradient(45deg, #00d4ff, #ff00ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: titleGlow 3s ease-in-out infinite;
         }
-        
-        .download-btn {
-            display: inline-block;
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            color: var(--darker);
-            padding: 22px 60px;
-            font-family: 'Orbitron', sans-serif;
-            font-size: 1.8rem;
-            font-weight: 700;
-            text-decoration: none;
-            border-radius: 10px;
-            margin: 20px 0;
-            box-shadow: 0 10px 30px rgba(0, 243, 255, 0.4);
-            transition: all 0.3s ease;
-            border: 2px solid var(--primary);
-            text-transform: uppercase;
-            letter-spacing: 1px;
+
+        @keyframes titleGlow {
+            0%, 100% { filter: brightness(1); }
+            50% { filter: brightness(1.3); }
+        }
+
+        .games-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .game-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            overflow: hidden;
+            border: 2px solid transparent;
+            transition: all 0.3s;
+            position: relative;
+            animation: cardFloat 6s ease-in-out infinite;
+        }
+
+        .game-card:nth-child(2) { animation-delay: 1s; }
+        .game-card:nth-child(3) { animation-delay: 2s; }
+
+        @keyframes cardFloat {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .game-card:hover {
+            border-color: #00d4ff;
+            box-shadow: 0 0 40px rgba(0, 212, 255, 0.4);
+            transform: translateY(-5px) scale(1.02);
+        }
+
+        .game-image {
+            width: 100%;
+            height: 400px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4em;
             position: relative;
             overflow: hidden;
-            z-index: 1;
         }
-        
-        .download-btn:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 40px rgba(0, 243, 255, 0.6);
-            background: linear-gradient(135deg, #00e6ff, #0099ff);
-        }
-        
-        .download-btn::before {
+
+        .game-image::before {
             content: '';
             position: absolute;
             top: -50%;
             left: -50%;
             width: 200%;
             height: 200%;
-            background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
-            transform: rotate(30deg);
-            z-index: -1;
+            background: linear-gradient(45deg, transparent, rgba(255,255,255,0.1), transparent);
+            transform: rotate(45deg);
+            animation: shine 3s infinite;
         }
-        
-        .download-btn:hover::before {
-            animation: 2s linear infinite;
+
+        @keyframes shine {
+            0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+            100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
         }
-        
-        .download-btn span {
-            position: relative;
-            z-index: 2;
-        }
-        
-        /* Ad Slots */
-        .ad-container {
-            background: var(--card-bg);
-            border-radius: 20px;
+
+        .game-info {
             padding: 25px;
-            margin: 30px 0;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-            border: 1px solid rgba(0, 243, 255, 0.1);
-            position: relative;
-            overflow: hidden;
         }
-        
-        .ad-container::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 5px;
-            background: linear-gradient(90deg, var(--primary), var(--accent));
+
+        .game-title {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+            color: #00d4ff;
         }
-        
-        .ad-label {
-            position: absolute;
-            top: 10px;
-            right: 15px;
-            background: rgba(0, 0, 0, 0.7);
-            color: var(--primary);
+
+        .game-platform {
+            display: inline-block;
+            background: rgba(255, 0, 255, 0.2);
             padding: 5px 15px;
-            border-radius: 20px;
-            font-size: 0.9rem;
-            font-weight: bold;
-            z-index: 2;
-            border: 1px solid var(--primary);
-        }
-        
-        .ad-slot {
-            background: rgba(30, 30, 50, 0.5);
-            border-radius: 10px;
-            padding: 20px;
-            min-height: 250px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border: 1px dashed rgba(0, 243, 255, 0.3);
-            text-align: center;
-        }
-        
-        .ad-slot h3 {
-            color: var(--primary);
-            margin-bottom: 15px;
-            font-size: 1.5rem;
-        }
-        
-        .ad-slot p {
-            color: #8080ff;
-            font-size: 1.1rem;
-        }
-        
-        .ad-slot-sm {
-            min-height: 120px;
-        }
-        
-        .ad-slot-md {
-            min-height: 250px;
-        }
-        
-        .ad-slot-lg {
-            min-height: 400px;
-        }
-        
-        /* Features Section */
-        .features {
-            padding: 80px 5%;
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-        
-        .section-title {
-            text-align: center;
-            margin-bottom: 60px;
-        }
-        
-        .section-title h2 {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 2.8rem;
-            color: var(--primary);
-            margin-bottom: 20px;
-            text-shadow: 0 0 15px rgba(0, 243, 255, 0.3);
-        }
-        
-        .section-title p {
-            color: #a0a0ff;
-            font-size: 1.3rem;
-            max-width: 700px;
-            margin: 0 auto;
-        }
-        
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
-        
-        .feature-card {
-            background: var(--card-bg);
             border-radius: 15px;
-            padding: 30px;
-            transition: all 0.3s ease;
-            border: 1px solid rgba(0, 243, 255, 0.1);
-            transform: translateY(50px);
-            opacity: 0;
+            font-size: 0.9em;
+            margin-bottom: 15px;
+            border: 1px solid #ff00ff;
         }
-        
-        .feature-card.animate {
-            transform: translateY(0);
-            opacity: 1;
-        }
-        
-        .feature-card h3 {
-            font-size: 1.8rem;
-            color: var(--primary);
-            margin: 20px 0;
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-        
-        .feature-card h3 i {
-            font-size: 2.2rem;
-            background: linear-gradient(90deg, var(--primary), var(--accent));
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-        }
-        
-        .feature-card p {
-            color: #b0b0ff;
-            line-height: 1.7;
-        }
-        
-        /* Download Section */
-        .download-section {
-            padding: 100px 5% 80px;
-            background: linear-gradient(rgba(10, 10, 21, 0.8), rgba(10, 10, 21, 0.9)), 
-                        url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect width="100" height="100" fill="%230a0a15"/><path d="M0 50 L100 50 M50 0 L50 100" stroke="%2300f3ff" stroke-width="0.5" stroke-opacity="0.1"/></svg>');
-            background-size: cover;
+
+        .download-btn {
+            width: 100%;
+            padding: 15px;
+            background: linear-gradient(45deg, #00d4ff, #0099ff);
+            border: none;
+            border-radius: 10px;
+            color: #fff;
+            font-size: 1.1em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 10px;
             position: relative;
             overflow: hidden;
         }
-        
-        .download-section::before {
+
+        .download-btn::before {
             content: '';
             position: absolute;
             top: 0;
-            left: 0;
+            left: -100%;
             width: 100%;
             height: 100%;
-            background: radial-gradient(circle, transparent 20%, rgba(0, 0, 0, 0.3) 80%);
-            pointer-events: none;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+            transition: left 0.5s;
         }
-        
-        .download-container {
-            max-width: 900px;
-            margin: 0 auto;
-            position: relative;
-            z-index: 2;
+
+        .download-btn:hover::before {
+            left: 100%;
         }
-        
-        .download-container h2 {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 2.5rem;
-            color: var(--primary);
-            margin-bottom: 30px;
-            text-align: center;
+
+        .download-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(0, 212, 255, 0.4);
         }
-        
-        .download-steps {
+
+        /* Trust Badges */
+        .trust-section {
             display: flex;
-            flex-direction: column;
-            gap: 25px;
-            margin: 40px 0;
-        }
-        
-        .step {
-            display: flex;
-            gap: 25px;
-            align-items: flex-start;
-            background: var(--card-bg);
-            padding: 25px;
-            border-radius: 15px;
-            border-left: 4px solid var(--primary);
-        }
-        
-        .step-number {
-            background: var(--primary);
-            color: var(--darker);
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
             justify-content: center;
-            font-weight: bold;
-            font-size: 1.4rem;
-            flex-shrink: 0;
-            font-family: 'Orbitron', sans-serif;
+            gap: 30px;
+            margin: 50px 0;
+            flex-wrap: wrap;
         }
-        
-        .step-content h3 {
-            font-size: 1.5rem;
-            color: var(--primary);
+
+        .trust-badge {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 20px 30px;
+            border-radius: 15px;
+            text-align: center;
+            border: 1px solid rgba(0, 212, 255, 0.3);
+            transition: all 0.3s;
+        }
+
+        .trust-badge:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 212, 255, 0.2);
+        }
+
+        .trust-icon {
+            font-size: 2.5em;
             margin-bottom: 10px;
         }
-        
-        .step-content p {
-            color: #b0b0ff;
-            line-height: 1.7;
-        }
-        
-        /* Testimonials */
-        .testimonials {
-            padding: 80px 5%;
-            background: rgba(10, 10, 21, 0.7);
-        }
-        
-        .testimonials-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        
-        .testimonial {
-            background: var(--card-bg);
+
+        /* Native Ad Container */
+        .native-ad-container {
+            margin: 40px 0;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.03);
             border-radius: 15px;
-            padding: 30px;
-            border: 1px solid rgba(0, 243, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
-        
-        .testimonial-header {
-            display: flex;
-            align-items: center;
-            margin-bottom: 20px;
-        }
-        
-        .testimonial-avatar {
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            background: linear-gradient(45deg, var(--primary), var(--accent));
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-right: 15px;
-            font-size: 1.8rem;
-            color: var(--darker);
-            font-weight: bold;
-        }
-        
-        .testimonial-name {
-            font-weight: bold;
-            color: var(--primary);
-            font-size: 1.2rem;
-        }
-        
-        .testimonial-text {
-            color: #b0b0ff;
-            line-height: 1.7;
-            font-style: italic;
-        }
-        
+
         /* Footer */
-        footer {
-            background: rgba(5, 5, 12, 0.9);
-            padding: 60px 5% 30px;
-            border-top: 1px solid rgba(0, 243, 255, 0.2);
+        .footer {
+            background: rgba(0, 0, 0, 0.9);
+            border-top: 2px solid #00d4ff;
+            padding: 40px 20px;
+            text-align: center;
+            margin-top: 60px;
         }
-        
+
         .footer-content {
             max-width: 1400px;
             margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 40px;
         }
-        
-        .footer-column h3 {
-            color: var(--primary);
-            font-size: 1.5rem;
-            margin-bottom: 25px;
-            position: relative;
-            padding-bottom: 10px;
-        }
-        
-        .footer-column h3::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 50px;
-            height: 2px;
-            background: linear-gradient(90deg, var(--primary), var(--accent));
-        }
-        
-        .footer-column p, .footer-column a {
-            color: #a0a0ff;
-            margin-bottom: 15px;
-            display: block;
-            text-decoration: none;
-            transition: all 0.3s ease;
-        }
-        
-        .footer-column a:hover {
-            color: var(--primary);
-            padding-left: 5px;
-        }
-        
-        .social-links {
-            display: flex;
-            gap: 15px;
-            margin-top: 20px;
-        }
-        
-        .social-links a {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            background: rgba(0, 243, 255, 0.1);
-            color: var(--primary);
-            transition: all 0.3s ease;
-        }
-        
-        .social-links a:hover {
-            background: var(--primary);
-            color: var(--darker);
-            transform: translateY(-3px);
-        }
-        
-        .copyright {
-            text-align: center;
-            padding-top: 40px;
-            margin-top: 40px;
-            border-top: 1px solid rgba(0, 243, 255, 0.1);
-            color: #8080ff;
-            font-size: 0.9rem;
-        }
-        
-        /* Responsive Design */
-        @media (max-width: 992px) {
-            .hero h2 {
-                font-size: 3.5rem;
+
+        /* Responsive */
+        @media (max-width: 1200px) {
+            .sidebar-left, .sidebar-right {
+                display: none;
             }
-            
-            .download-btn {
-                padding: 18px 45px;
-                font-size: 1.5rem;
+            .games-grid {
+                grid-template-columns: repeat(2, 1fr);
             }
         }
-        
+
         @media (max-width: 768px) {
-            .header-container {
+            .games-grid {
+                grid-template-columns: 1fr;
+            }
+            .logo {
+                font-size: 1.8em;
+            }
+            .header-content {
                 flex-direction: column;
-                gap: 15px;
-            }
-            
-            .hero h2 {
-                font-size: 2.8rem;
-            }
-            
-            .hero p {
-                font-size: 1.2rem;
-            }
-            
-            .download-btn {
-                padding: 16px 40px;
-                font-size: 1.3rem;
-            }
-            
-            .step {
-                flex-direction: column;
+                gap: 20px;
             }
         }
-        
-        @media (max-width: 576px) {
-            .hero h2 {
-                font-size: 2.2rem;
-            }
-            
-            .download-btn {
-                width: 100%;
-            }
-            
-            .ad-slot {
-                min-height: 200px;
-            }
+
+        /* Loading Animation */
+        .loading {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid rgba(255,255,255,0.3);
+            border-radius: 50%;
+            border-top-color: #00d4ff;
+            animation: spin 1s ease-in-out infinite;
         }
-        
-        /* Floating elements animation */
-        .floating {
-            animation: float 6s ease-in-out infinite;
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
         }
-        
-        .floating:nth-child(1) { animation-delay: 0s; }
-        .floating:nth-child(2) { animation-delay: 1s; }
-        .floating:nth-child(3) { animation-delay: 2s; }
+
+        /* Neon Effects */
+        .neon-text {
+            text-shadow: 
+                0 0 10px #00d4ff,
+                0 0 20px #00d4ff,
+                0 0 40px #00d4ff;
+        }
+
+        .pulse-animation {
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
     </style>
 </head>
 <body>
+    <!-- Background Animation -->
+    <div class="bg-animation">
+        <div class="particles"></div>
+        <div class="glow-lines"></div>
+    </div>
+
     <!-- Header -->
-    <header>
-        <div class="header-container">
-            <div class="logo">
-                <div class="logo-icon">🎮</div>
-                <h1>Game Download Pro</h1>
+    <header class="header">
+        <div class="header-content">
+            <div class="logo">🎮 Game Download Pro</div>
+            <div class="header-nav">
+                <div class="usa-badge">
+                    <span class="usa-flag">🇸</span>
+                    <span>Fast USA Downloads</span>
+                </div>
+                <div class="social-icons">
+                    <a href="#">📘</a>
+                    <a href="#">🐦</a>
+                    <a href="#"></a>
+                    <a href="#">▶️</a>
+                </div>
             </div>
-            <nav class="header-nav">
-                <a href="#home">Home</a>
-                <a href="#games">Games</a>
-                <a href="#mods">Mods</a>
-                <a href="#support">Support</a>
-            </nav>
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero" id="home">
-        <div class="hero-content">
-            <h2>Download Premium Games Today</h2>
-            <p>Get the latest PC games, mods, and tools with our lightning-fast download servers. 100% safe and virus-free downloads for USA gamers.</p>
-            
-            <!-- Popunder Ad -->
-            <div class="ad-container" style="margin-top: 40px; animation: slideIn 0.8s forwards;">
-                <div class="ad-label">POPUNDER AD</div>
-                <div class="ad-slot" id="popunder-ad">
-                    <h3>Adsterra Popunder</h3>
-                    <p>Click anywhere to see the popunder ad</p>
-                </div>
-                <script src="https://pl30458941.effectivecpmnetwork.com/b8/8f/9a/b88f9a464a1f5baaade46226e3d4b548.js"></script>
-            </div>
-            
-            <!-- Social Bar -->
-            <div class="ad-container" style="margin-top: 40px; animation: slideIn 1s forwards;">
-                <div class="ad-label">SOCIAL BAR</div>
-                <div class="ad-slot ad-slot-sm" id="social-bar-ad">
-                    <h3>Adsterra Social Bar</h3>
-                    <p>Horizontal social bar ad placement</p>
-                </div>
-                <script src="https://pl30458944.effectivecpmnetwork.com/f4/85/36/f48536220ba0dd296207338d87288c0c.js"></script>
-            </div>
-            
-            <!-- Download Button -->
-            <a href="#" class="download-btn" id="download-btn">
-                <span>DOWNLOAD NOW</span>
-            </a>
-            <script>
-                // Replace with your Direct Link
-                document.getElementById('download-btn').href = 'https://pl30458941.effectivecpmnetwork.com/b8/8f/9a/b88f9a464a1f5baaade46226e3d4b548.js';
-            </script>
-        </div>
-    </section>
+    <!-- Top Banner 728x90 -->
+    <div class="top-banner-container">
+        <script>
+            atOptions = {
+                'key' : '0f5413053a82a1d12715eaeada511eed',
+                'format' : 'iframe',
+                'height' : 90,
+                'width' : 728,
+                'params' : {}
+            };
+        </script>
+        <script src="https://www.highperformanceformat.com/0f5413053a82a1d12715eaeada511eed/invoke.js"></script>
+    </div>
 
-    <!-- Main Content -->
-    <main>
-        <!-- Top Banner -->
-        <div class="ad-container" style="animation: slideIn 0.6s forwards;">
-            <div class="ad-label">TOP BANNER (728x90)</div>
-            <div class="ad-slot ad-slot-md" id="top-banner">
-                <h3>Adsterra Top Banner</h3>
-                <p>728x90 banner placement at the top of content</p>
-            </div>
+    <div class="main-container">
+        <!-- Left Sidebar 160x600 -->
+        <aside class="sidebar-left">
             <script>
                 atOptions = {
-                    'key' : '0f5413053a82a1d12715eaeada511eed',
+                    'key' : 'b63214e4dc10b37d6952906287ecbce3',
                     'format' : 'iframe',
-                    'height' : 90,
-                    'width' : 728,
+                    'height' : 600,
+                    'width' : 160,
                     'params' : {}
                 };
             </script>
-            <script src="https://www.highperformanceformat.com/0f5413053a82a1d12715eaeada511eed/invoke.js"></script>
-        </div>
-        
-        <!-- Features Section -->
-        <section class="features">
-            <div class="section-title">
-                <h2>Why Gamers Love Us</h2>
-                <p>Our platform offers the best gaming experience with fast downloads and premium content</p>
-            </div>
-            
-            <div class="features-grid">
-                <div class="feature-card">
-                    <h3><i>⚡</i> Lightning Fast Speeds</h3>
-                    <p>Our optimized servers ensure the fastest download speeds for USA gamers. No more waiting for your favorite games to download!</p>
-                </div>
+            <script src="https://www.highperformanceformat.com/b63214e4dc10b37d6952906287ecbce3/invoke.js"></script>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="content">
+            <section class="games-section">
+                <h1 class="section-title neon-text"> Trending Games</h1>
                 
-                <div class="feature-card">
-                    <h3><i>🔒</i> 100% Safe & Secure</h3>
-                    <p>Every file is scanned for viruses and malware. Your security is our top priority - we never compromise on safety.</p>
-                </div>
-                
-                <div class="feature-card">
-                    <h3><i>🔄</i> Daily Updates</h3>
-                    <p>We update our game library daily with the latest releases, patches, and mods. Stay ahead of the gaming curve!</p>
-                </div>
-            </div>
-        </section>
-        
-        <!-- Middle Banner -->
-        <div class="ad-container" style="animation: slideIn 0.8s forwards;">
-            <div class="ad-label">MIDDLE BANNER (300x250)</div>
-            <div class="ad-slot ad-slot-md" id="middle-banner">
-                <h3>Adsterra Middle Banner</h3>
-                <p>300x250 banner placement in content section</p>
-            </div>
-            <script>
-                atOptions = {
-                    'key' : '19f54c607345877bec83d6f47b4baa18',
-                    'format' : 'iframe',
-                    'height' : 250,
-                    'width' : 300,
-                    'params' : {}
-                };
-            </script>
-            <script src="https://www.highperformanceformat.com/19f54c607345877bec83d6f47b4baa18/invoke.js"></script>
-        </div>
-        
-        <!-- Download Section -->
-        <section class="download-section">
-            <div class="download-container">
-                <h2>How to Download Games</h2>
-                
-                <!-- Native Ad -->
-                <div class="ad-container" style="margin: 40px 0; animation: slideIn 1s forwards;">
-                    <div class="ad-label">NATIVE AD</div>
-                    <div class="ad-slot ad-slot-md" id="native-ad">
-                        <h3>Adsterra Native Ad</h3>
-                        <p>Native ad placement integrated with content</p>
+                <div class="games-grid">
+                    <!-- Game 1 -->
+                    <div class="game-card">
+                        <div class="game-image">🎯</div>
+                        <div class="game-info">
+                            <h3 class="game-title">Cyber Nexus</h3>
+                            <span class="game-platform">PC</span>
+                            <p>Experience the future of gaming with stunning graphics and immersive gameplay.</p>
+                            <button class="download-btn" onclick="handleDownload('cyber-nexus')">
+                                ⬇️ Download Now
+                            </button>
+                        </div>
                     </div>
-                    <script async="async" data-cfasync="false" src="https://pl30458942.effectivecpmnetwork.com/045038441bcb590952fc2cf4a18e2133/invoke.js"></script>
+
+                    <!-- Game 2 -->
+                    <div class="game-card">
+                        <div class="game-image" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">🏎️</div>
+                        <div class="game-info">
+                            <h3 class="game-title">Neon Drift Remastered</h3>
+                            <span class="game-platform">PS5/PC</span>
+                            <p>High-speed racing action with breathtaking neon-lit tracks.</p>
+                            <button class="download-btn" onclick="handleDownload('neon-drift')">
+                                ⬇️ Download Now
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Game 3 -->
+                    <div class="game-card">
+                        <div class="game-image" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">🏰</div>
+                        <div class="game-info">
+                            <h3 class="game-title">Pixel Quest Lite</h3>
+                            <span class="game-platform">Android</span>
+                            <p>Classic pixel art adventure game for mobile gamers.</p>
+                            <button class="download-btn" onclick="handleDownload('pixel-quest')">
+                                ⬇️ Download Now
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Game 4 -->
+                    <div class="game-card">
+                        <div class="game-image" style="background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);">⚔️</div>
+                        <div class="game-info">
+                            <h3 class="game-title">Battle Royale X</h3>
+                            <span class="game-platform">PC/Mobile</span>
+                            <p>100 players, one winner. The ultimate battle royale experience.</p>
+                            <button class="download-btn" onclick="handleDownload('battle-royale')">
+                                ⬇️ Download Now
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Game 5 -->
+                    <div class="game-card">
+                        <div class="game-image" style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);">🌟</div>
+                        <div class="game-info">
+                            <h3 class="game-title">Space Odyssey</h3>
+                            <span class="game-platform">PC</span>
+                            <p>Explore the universe in this epic space exploration game.</p>
+                            <button class="download-btn" onclick="handleDownload('space-odyssey')">
+                                ⬇️ Download Now
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Game 6 -->
+                    <div class="game-card">
+                        <div class="game-image" style="background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);"></div>
+                        <div class="game-info">
+                            <h3 class="game-title">Retro Arcade Collection</h3>
+                            <span class="game-platform">All Platforms</span>
+                            <p>Classic arcade games remastered for modern systems.</p>
+                            <button class="download-btn" onclick="handleDownload('retro-arcade')">
+                                ️ Download Now
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Native Banner 4:1 -->
+                <div class="native-ad-container">
                     <div id="container-045038441bcb590952fc2cf4a18e2133"></div>
+                    <script async="async" data-cfasync="false" src="https://pl30458942.effectivecpmnetwork.com/045038441bcb590952fc2cf4a18e2133/invoke.js"></script>
                 </div>
-                
-                <div class="download-steps">
-                    <div class="step">
-                        <div class="step-number">1</div>
-                        <div class="step-content">
-                            <h3>Choose Your Game</h3>
-                            <p>Browse our extensive library of the latest PC games, mods, and tools. Find exactly what you're looking for with our easy search system.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="step">
-                        <div class="step-number">2</div>
-                        <div class="step-content">
-                            <h3>Click Download</h3>
-                            <p>Once you've found your game, simply click the download button. Our smartlink system will connect you to the fastest available server.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="step">
-                        <div class="step-number">3</div>
-                        <div class="step-content">
-                            <h3>Install & Play</h3>
-                            <p>After downloading, run the installer and follow the simple instructions. In minutes, you'll be playing your favorite games!</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Sidebar Banners -->
-                <div class="ad-container" style="margin: 40px 0; animation: slideIn 1.2s forwards;">
-                    <div class="ad-label">SIDEBAR BANNER (160x300)</div>
-                    <div class="ad-slot ad-slot-md" id="sidebar-banner-1">
-                        <h3>Adsterra Sidebar Banner</h3>
-                        <p>160x300 banner placement for sidebar</p>
-                    </div>
+
+                <!-- Middle Banner 300x250 -->
+                <div style="text-align: center; margin: 40px 0;">
                     <script>
                         atOptions = {
-                            'key' : '3d4c6df069f7242d16db1166221b171e',
+                            'key' : '19f54c607345877bec83d6f47b4baa18',
                             'format' : 'iframe',
-                            'height' : 300,
-                            'width' : 160,
+                            'height' : 250,
+                            'width' : 300,
                             'params' : {}
                         };
                     </script>
-                    <script src="https://www.highperformanceformat.com/3d4c6df069f7242d16db1166221b171e/invoke.js"></script>
+                    <script src="https://www.highperformanceformat.com/19f54c607345877bec83d6f47b4baa18/invoke.js"></script>
                 </div>
-                
-                <div class="ad-container" style="margin: 40px 0; animation: slideIn 1.4s forwards;">
-                    <div class="ad-label">SIDEBAR BANNER (160x600)</div>
-                    <div class="ad-slot ad-slot-lg" id="sidebar-banner-2">
-                        <h3>Adsterra Sidebar Banner</h3>
-                        <p>160x600 banner placement for sidebar</p>
-                    </div>
-                    <script>
-                        atOptions = {
-                            'key' : 'b63214e4dc10b37d6952906287ecbce3',
-                            'format' : 'iframe',
-                            'height' : 600,
-                            'width' : 160,
-                            'params' : {}
-                        };
-                    </script>
-                    <script src="https://www.highperformanceformat.com/b63214e4dc10b37d6952906287ecbce3/invoke.js"></script>
+            </section>
+
+            <!-- Trust Badges -->
+            <section class="trust-section">
+                <div class="trust-badge">
+                    <div class="trust-icon">🛡️</div>
+                    <div><strong>Verified & Secured</strong></div>
+                    <div style="font-size: 0.9em; opacity: 0.8;">100% Safe Downloads</div>
                 </div>
-            </div>
-        </section>
-        
-        <!-- Testimonials -->
-        <section class="testimonials">
-            <div class="section-title">
-                <h2>What Gamers Say</h2>
-                <p>Don't just take our word for it - see what our community thinks</p>
-            </div>
-            
-            <div class="testimonials-grid">
-                <div class="testimonial">
-                    <div class="testimonial-header">
-                        <div class="testimonial-avatar">A</div>
-                        <div class="testimonial-name">Alex Johnson</div>
-                    </div>
-                    <p class="testimonial-text">"Game Download Pro has changed how I get my games. The download speeds are insane and I've never had a virus. Best site I've found!"</p>
+                <div class="trust-badge">
+                    <div class="trust-icon">✅</div>
+                    <div><strong>No Malware Guaranteed</strong></div>
+                    <div style="font-size: 0.9em; opacity: 0.8;">Virus-Free Files</div>
                 </div>
-                
-                <div class="testimonial">
-                    <div class="testimonial-header">
-                        <div class="testimonial-avatar">S</div>
-                        <div class="testimonial-name">Sarah Williams</div>
-                    </div>
-                    <p class="testimonial-text">"I love the variety of mods available. The social bar ads are actually useful for finding new games. Highly recommend to all USA gamers!"</p>
+                <div class="trust-badge">
+                    <div class="trust-icon"></div>
+                    <div><strong>Trusted by 2M+ Gamers</strong></div>
+                    <div style="font-size: 0.9em; opacity: 0.8;">Worldwide Community</div>
                 </div>
-                
-                <div class="testimonial">
-                    <div class="testimonial-header">
-                        <div class="testimonial-avatar">M</div>
-                        <div class="testimonial-name">Michael Chen</div>
-                    </div>
-                    <p class="testimonial-text">"The native ads blend in perfectly with the content. I've made $50+ per day just from the popunder ads. This site is a goldmine!"</p>
-                </div>
+            </section>
+
+            <!-- Bottom Banner 468x60 -->
+            <div style="text-align: center; margin: 40px 0;">
+                <script>
+                    atOptions = {
+                        'key' : '46179ab4d592ae6f346d25f060c3a908',
+                        'format' : 'iframe',
+                        'height' : 60,
+                        'width' : 468,
+                        'params' : {}
+                    };
+                </script>
+                <script src="https://www.highperformanceformat.com/46179ab4d592ae6f346d25f060c3a908/invoke.js"></script>
             </div>
-        </section>
-        
-        <!-- Bottom Banner -->
-        <div class="ad-container" style="animation: slideIn 1.6s forwards;">
-            <div class="ad-label">BOTTOM BANNER (468x60)</div>
-            <div class="ad-slot ad-slot-md" id="bottom-banner">
-                <h3>Adsterra Bottom Banner</h3>
-                <p>468x60 banner placement at the bottom of content</p>
+        </main>
+
+        <!-- Right Sidebar -->
+        <aside class="sidebar-right">
+            <!-- 300x250 -->
+            <div style="margin-bottom: 30px;">
+                <script>
+                    atOptions = {
+                        'key' : '19f54c607345877bec83d6f47b4baa18',
+                        'format' : 'iframe',
+                        'height' : 250,
+                        'width' : 300,
+                        'params' : {}
+                    };
+                </script>
+                <script src="https://www.highperformanceformat.com/19f54c607345877bec83d6f47b4baa18/invoke.js"></script>
             </div>
-            <script>
-                atOptions = {
-                    'key' : '46179ab4d592ae6f346d25f060c3a908',
-                    'format' : 'iframe',
-                    'height' : 60,
-                    'width' : 468,
-                    'params' : {}
-                };
-            </script>
-            <script src="https://www.highperformanceformat.com/46179ab4d592ae6f346d25f060c3a908/invoke.js"></script>
-        </div>
-        
-        <!-- Mobile Banner -->
-        <div class="ad-container" style="animation: slideIn 1.8s forwards;">
-            <div class="ad-label">MOBILE BANNER (320x50)</div>
-            <div class="ad-slot ad-slot-sm" id="mobile-banner">
-                <h3>Adsterra Mobile Banner</h3>
-                <p>320x50 banner for mobile devices</p>
+
+            <!-- 160x300 -->
+            <div style="margin-bottom: 30px;">
+                <script>
+                    atOptions = {
+                        'key' : '3d4c6df069f7242d16db1166221b171e',
+                        'format' : 'iframe',
+                        'height' : 300,
+                        'width' : 160,
+                        'params' : {}
+                    };
+                </script>
+                <script src="https://www.highperformanceformat.com/3d4c6df069f7242d16db1166221b171e/invoke.js"></script>
             </div>
-            <script>
-                atOptions = {
-                    'key' : '00cf522765837ee4a3061c4dcfc201eb',
-                    'format' : 'iframe',
-                    'height' : 50,
-                    'width' : 320,
-                    'params' : {}
-                };
-            </script>
-            <script src="https://www.highperformanceformat.com/00cf522765837ee4a3061c4dcfc201eb/invoke.js"></script>
-        </div>
-    </main>
+
+            <!-- 320x50 -->
+            <div>
+                <script>
+                    atOptions = {
+                        'key' : '00cf522765837ee4a3061c4dcfc201eb',
+                        'format' : 'iframe',
+                        'height' : 50,
+                        'width' : 320,
+                        'params' : {}
+                    };
+                </script>
+                <script src="https://www.highperformanceformat.com/00cf522765837ee4a3061c4dcfc201eb/invoke.js"></script>
+            </div>
+        </aside>
+    </div>
 
     <!-- Footer -->
-    <footer>
+    <footer class="footer">
         <div class="footer-content">
-            <div class="footer-column">
-                <h3>Game Download Pro</h3>
-                <p>The ultimate destination for PC game downloads, mods, and tools. Fast, safe, and completely free for USA gamers.</p>
-                <div class="social-links">
-                    <a href="#"><i>𝕏</i></a>
-                    <a href="#"><i>f</i></a>
-                    <a href="#"><i>IG</i></a>
-                    <a href="#"><i>YT</i></a>
-                </div>
-            </div>
-            
-            <div class="footer-column">
-                <h3>Quick Links</h3>
-                <a href="#home">Home</a>
-                <a href="#games">All Games</a>
-                <a href="#mods">Game Mods</a>
-                <a href="#support">Support</a>
-                <a href="#">Privacy Policy</a>
-            </div>
-            
-            <div class="footer-column">
-                <h3>Download Guides</h3>
-                <a href="#">How to Install Games</a>
-                <a href="#">Fixing Common Errors</a>
-                <a href="#">Recommended System Specs</a>
-                <a href="#">Troubleshooting Guide</a>
-                <a href="#">Contact Support</a>
-            </div>
-            
-            <div class="footer-column">
-                <h3>Newsletter</h3>
-                <p>Subscribe for the latest game releases and exclusive offers.</p>
-                <form>
-                    <input type="email" placeholder="Your email" style="width: 100%; padding: 12px; margin: 10px 0; border-radius: 5px; border: none; background: rgba(0,0,0,0.3); color: white;">
-                    <button type="submit" style="width: 100%; padding: 12px; background: var(--primary); color: var(--darker); border: none; border-radius: 5px; font-weight: bold; cursor: pointer;">Subscribe</button>
-                </form>
-            </div>
-        </div>
-        
-        <div class="copyright">
-            <p>&copy; 2026 Game Download Pro. All rights reserved. | USA Gaming Community</p>
+            <h2 style="margin-bottom: 20px; color: #00d4ff;">🎮 Game Download Pro</h2>
+            <p style="margin-bottom: 20px; opacity: 0.8;">Your trusted source for fast and safe game downloads</p>
+            <p style="font-size: 0.9em; opacity: 0.6;">&copy; 2026 Game Download Pro. All rights reserved.</p>
         </div>
     </footer>
 
-    <!-- Scripts -->
     <script>
-        // Feature card animations
-        document.addEventListener('DOMContentLoaded', function() {
-            const featureCards = document.querySelectorAll('.feature-card');
+        // Handle Download with Smartlink
+        function handleDownload(gameName) {
+            // Popunder will trigger automatically
+            // Smartlink integration
+            window.open('https://pl30458941.effectivecpmnetwork.com/b8/8f/9a/b88f9a464a1f5baaade46226e3d4b548', '_blank');
             
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('animate');
-                        observer.unobserve(entry.target);
-                    }
-                });
-            }, { threshold: 0.1 });
+            // Show loading animation
+            event.target.innerHTML = '<span class="loading"></span> Preparing...';
             
-            featureCards.forEach(card => {
-                observer.observe(card);
+            setTimeout(() => {
+                event.target.innerHTML = '⬇️ Download Now';
+            }, 3000);
+        }
+
+        // Add click tracking for better engagement
+        document.querySelectorAll('.game-card').forEach(card => {
+            card.addEventListener('click', function(e) {
+                if (!e.target.classList.contains('download-btn')) {
+                    this.querySelector('.download-btn').click();
+                }
             });
-            
-            // Popunder trigger
-            document.addEventListener('click', function() {
-                // This will trigger the popunder
-                window.open('https://pl30458941.effectivecpmnetwork.com/b8/8f/9a/b88f9a464a1f5baaade46226e3d4b548.js', '_blank');
-            }, { once: true });
+        });
+
+        // Smooth scroll animation
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const parallax = document.querySelector('.bg-animation');
+            parallax.style.transform = `translateY(${scrolled * 0.5}px)`;
         });
     </script>
 </body>
